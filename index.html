@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Beats | Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <header class="topbar">
+        <h2 class="logo">♫ CAMPUS<span>BEATS</span></h2>
+        <div class="top-right">
+            <span class="online-dot"></span>
+            <span class="tagline">YOUR PERSONAL SOUNDTRACK</span>
+            <div class="profile">C</div>
+        </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+        <div class="hero-content">
+            <p>A LITTLE MUSIC, A LOT OF FEELING</p>
+            <h1>Your mood.<br><span>Your music.</span></h1>
+            <p class="hero-description">
+                A cozy corner for OPM favorites, love songs,
+                and the tracks you keep on repeat.
+            </p>
+            <button class="explore-btn" onclick="document.getElementById('discover').scrollIntoView({behavior:'smooth'})">
+                Explore your playlist →
+            </button>
+        </div>
+
+        <div class="hero-art">
+            <div class="vinyl">♫</div>
+            <div class="headphone">🎧</div>
+            <span class="music-note note-one">♪</span>
+            <span class="music-note note-two">♫</span>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <nav class="categories">
+        <button class="category active" data-category="all">▦ All songs</button>
+        <button class="category" data-category="opm">🔥 OPM</button>
+        <button class="category" data-category="love">💗 Love songs</button>
+        <button class="category" data-category="chill">❄ Chill</button>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <section class="discover" id="discover">
+
+            <div class="song-section">
+                <div class="section-heading">
+                    <p>MADE FOR YOUR MOMENTS</p>
+                    <h2>Discover Music</h2>
+                </div>
+
+                <div class="song-count" id="songCount">10 TRACKS</div>
+
+                <div class="song-list" id="songList"></div>
+            </div>
+
+            <!-- LYRICS -->
+            <section class="lyrics-card">
+                <div class="lyrics-heading">
+                    <span class="line"></span>
+                    <div>
+                        <p>SING ALONG</p>
+                        <h2>Lyrics Preview</h2>
+                    </div>
+                    <span class="equalizer">▮▮▮</span>
+                </div>
+
+                <div class="lyric-song-info">
+                    <span id="lyricTitle">Select a song</span>
+                    <span> • </span>
+                    <span id="lyricArtist">Campus Beats</span>
+                </div>
+
+                <div class="lyrics-display" id="lyricsDisplay">
+                    <p class="empty-lyrics">Choose a song to enjoy its lyrics.</p>
+                </div>
+
+                <button id="showLyrics">Show more lyrics ↓</button>
+            </section>
+
+        </section>
+    </main>
+
+    <!-- BOTTOM MUSIC PLAYER -->
+    <footer class="player">
+
+        <div class="now-playing">
+            <div class="mini-cover" id="miniCover">♫</div>
+
+            <div class="song-info">
+                <h3 id="currentTitle">Select a song</h3>
+                <p id="currentArtist">Campus Beats</p>
+            </div>
+
+            <button class="favorite-btn" id="favoriteBtn" title="Favorite">♡</button>
+        </div>
+
+        <div class="player-center">
+
+            <div class="control-buttons">
+
+                <button id="shuffleBtn" title="Shuffle">⤨</button>
+
+                <button id="previousBtn" title="Previous">|◀</button>
+
+                <button id="playBtn" class="play-button" title="Play">▶</button>
+
+                <button id="nextBtn" title="Next">▶|</button>
+
+                <button id="repeatBtn" title="Repeat">🔁</button>
+
+            </div>
+
+            <div class="progress-area">
+                <span id="currentTime">0:00</span>
+
+                <input type="range" id="progressBar"
+                    min="0" max="100" value="0">
+
+                <span id="duration">0:00</span>
+            </div>
+
+        </div>
+
+        <div class="player-extra">
+            <span>🔊</span>
+            <input type="range" id="volumeBar"
+                min="0" max="1" step="0.01" value="0.8">
+        </div>
+
+    </footer>
+
+    <audio id="audioPlayer" preload="metadata"></audio>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
